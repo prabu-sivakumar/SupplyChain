@@ -80,7 +80,7 @@
   "sourceMap": "159:1701:2:-;;;609:65;8:9:-1;5:2;;;30:1;27;20:12;5:2;609:65:2;640:27;656:10;640:15;;;:27;;;:::i;:::-;159:1701;;1471:133;1532:25;1549:7;1532:12;:16;;;;;;:25;;;;;:::i;:::-;1589:7;1572:25;;;;;;;;;;;;1471:133;:::o;244:167:5:-;335:1;316:21;;:7;:21;;;;308:30;;;;;;;;353:18;357:4;363:7;353:3;;;:18;;;:::i;:::-;352:19;344:28;;;;;;;;402:4;379;:11;;:20;391:7;379:20;;;;;;;;;;;;;;;;:27;;;;;;;;;;;;;;;;;;244:167;;:::o;725:166::-;809:4;850:1;831:21;;:7;:21;;;;823:30;;;;;;;;866:4;:11;;:20;878:7;866:20;;;;;;;;;;;;;;;;;;;;;;;;;859:27;;725:166;;;;:::o;159:1701:2:-;;;;;;;",
   "deployedSourceMap": "159:1701:2:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1282:85;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1282:85:2;;;;;;1102:105;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1102:105:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;918:116;;8:9:-1;5:2;;;30:1;27;20:12;5:2;918:116:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1282:85;1330:30;1349:10;1330:18;:30::i;:::-;1282:85::o;1102:105::-;808:25;822:10;808:13;:25::i;:::-;800:34;;;;;;;;1176:24;1192:7;1176:15;:24::i;:::-;1102:105;:::o;918:116::-;979:4;1002:25;1019:7;1002:12;:16;;:25;;;;:::i;:::-;995:32;;918:116;;;:::o;1717:141::-;1781:28;1801:7;1781:12;:19;;:28;;;;:::i;:::-;1843:7;1824:27;;;;;;;;;;;;1717:141;:::o;1471:133::-;1532:25;1549:7;1532:12;:16;;:25;;;;:::i;:::-;1589:7;1572:25;;;;;;;;;;;;1471:133;:::o;725:166:5:-;809:4;850:1;831:21;;:7;:21;;;;823:30;;;;;;;;866:4;:11;;:20;878:7;866:20;;;;;;;;;;;;;;;;;;;;;;;;;859:27;;725:166;;;;:::o;477:170::-;571:1;552:21;;:7;:21;;;;544:30;;;;;;;;588:18;592:4;598:7;588:3;:18::i;:::-;580:27;;;;;;;;637:5;614:4;:11;;:20;626:7;614:20;;;;;;;;;;;;;;;;:28;;;;;;;;;;;;;;;;;;477:170;;:::o;244:167::-;335:1;316:21;;:7;:21;;;;308:30;;;;;;;;353:18;357:4;363:7;353:3;:18::i;:::-;352:19;344:28;;;;;;;;402:4;379;:11;;:20;391:7;379:20;;;;;;;;;;;;;;;;:27;;;;;;;;;;;;;;;;;;244:167;;:::o",
   "source": "pragma solidity ^0.4.24;\n\n// Import the library 'Roles'\nimport \"./Roles.sol\";\n\n// Define a contract 'DistributorRole' to manage this role - add, remove, check\ncontract DistributorRole {\n    using Roles for Roles.Role;\n\n    // Define 2 events, one for Adding, and other for Removing\n    event DistributorAdded(address indexed account);\n    event DistributorRemoved(address indexed account);\n\n    // Define a struct 'distributors' by inheriting from 'Roles' library, struct Role\n    Roles.Role private distributors;\n\n    // In the constructor make the address that deploys this contract the 1st distributor\n    constructor() public {\n        _addDistributor(msg.sender);\n    }\n\n    // Define a modifier that checks to see if msg.sender has the appropriate role\n    modifier onlyDistributor() {\n        require(isDistributor(msg.sender));\n        _;\n    }\n\n    // Define a function 'isDistributor' to check this role\n    function isDistributor(address account) public view returns (bool) {\n        return distributors.has(account);\n    }\n\n    // Define a function 'addDistributor' that adds this role\n    function addDistributor(address account) public onlyDistributor {\n        _addDistributor(account);\n    }\n\n    // Define a function 'renounceDistributor' to renounce this role\n    function renounceDistributor() public {\n        _removeDistributor(msg.sender);\n    }\n\n    // Define an internal function '_addDistributor' to add this role, called by 'addDistributor'\n    function _addDistributor(address account) internal {\n        distributors.add(account);\n        emit DistributorAdded(account);\n    }\n\n    // Define an internal function '_removeDistributor' to remove this role, called by 'removeDistributor'\n    function _removeDistributor(address account) internal {\n        distributors.remove(account);\n        emit DistributorRemoved(account);\n    }\n}\n",
-  "sourcePath": "C:\\Blockchain\\Supply-Chain-DApp\\project-6\\contracts\\coffeeaccesscontrol\\DistributorRole.sol",
+  "sourcePath": "C:\\Blockchain\\Supply-Chain-DApp\\SupplyChain\\contracts\\coffeeaccesscontrol\\DistributorRole.sol",
   "ast": {
     "absolutePath": "project:/contracts/coffeeaccesscontrol/DistributorRole.sol",
     "exportedSymbols": {
@@ -285,7 +285,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1514,
+                          "referencedDeclaration": 1532,
                           "src": "656:3:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -393,7 +393,7 @@
                               "name": "msg",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 1514,
+                              "referencedDeclaration": 1532,
                               "src": "822:3:2",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_magic_message",
@@ -459,10 +459,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1517,
-                        1518
+                        1535,
+                        1536
                       ],
-                      "referencedDeclaration": 1517,
+                      "referencedDeclaration": 1535,
                       "src": "800:7:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -821,7 +821,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1514,
+                          "referencedDeclaration": 1532,
                           "src": "1349:3:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -1587,7 +1587,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 1514,
+                                  "referencedDeclaration": 1532,
                                   "type": "msg",
                                   "value": "msg"
                                 },
@@ -1666,10 +1666,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                1517,
-                                1518
+                                1535,
+                                1536
                               ],
-                              "referencedDeclaration": 1517,
+                              "referencedDeclaration": 1535,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -1729,7 +1729,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 1514,
+                                      "referencedDeclaration": 1532,
                                       "type": "msg",
                                       "value": "msg"
                                     },
@@ -2196,7 +2196,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 1514,
+                                  "referencedDeclaration": 1532,
                                   "type": "msg",
                                   "value": "msg"
                                 },
@@ -2678,8 +2678,7 @@
     }
   },
   "schemaVersion": "3.4.4",
-  "updatedAt": "2022-01-18T05:41:47.111Z",
-  "networkType": "ethereum",
+  "updatedAt": "2022-01-18T14:14:14.437Z",
   "devdoc": {
     "methods": {}
   },

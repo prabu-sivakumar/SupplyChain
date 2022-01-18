@@ -80,7 +80,7 @@
   "sourceMap": "156:1614:1:-;;;588:62;8:9:-1;5:2;;;30:1;27;20:12;5:2;588:62:1;619:24;632:10;619:12;;;:24;;;:::i;:::-;156:1614;;1405:124;1463:22;1477:7;1463:9;:13;;;;;;:22;;;;;:::i;:::-;1514:7;1500:22;;;;;;;;;;;;1405:124;:::o;244:167:5:-;335:1;316:21;;:7;:21;;;;308:30;;;;;;;;353:18;357:4;363:7;353:3;;;:18;;;:::i;:::-;352:19;344:28;;;;;;;;402:4;379;:11;;:20;391:7;379:20;;;;;;;;;;;;;;;;:27;;;;;;;;;;;;;;;;;;244:167;;:::o;725:166::-;809:4;850:1;831:21;;:7;:21;;;;823:30;;;;;;;;866:4;:11;;:20;878:7;866:20;;;;;;;;;;;;;;;;;;;;;;;;;859:27;;725:166;;;;:::o;156:1614:1:-;;;;;;;",
   "deployedSourceMap": "156:1614:1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1060:96;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1060:96:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;1228:79;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1228:79:1;;;;;;885:110;;8:9:-1;5:2;;;30:1;27;20:12;5:2;885:110:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1060:96;781:22;792:10;781;:22::i;:::-;773:31;;;;;;;;1128:21;1141:7;1128:12;:21::i;:::-;1060:96;:::o;1228:79::-;1273:27;1289:10;1273:15;:27::i;:::-;1228:79::o;885:110::-;943:4;966:22;980:7;966:9;:13;;:22;;;;:::i;:::-;959:29;;885:110;;;:::o;1405:124::-;1463:22;1477:7;1463:9;:13;;:22;;;;:::i;:::-;1514:7;1500:22;;;;;;;;;;;;1405:124;:::o;1636:132::-;1697:25;1714:7;1697:9;:16;;:25;;;;:::i;:::-;1753:7;1737:24;;;;;;;;;;;;1636:132;:::o;725:166:5:-;809:4;850:1;831:21;;:7;:21;;;;823:30;;;;;;;;866:4;:11;;:20;878:7;866:20;;;;;;;;;;;;;;;;;;;;;;;;;859:27;;725:166;;;;:::o;244:167::-;335:1;316:21;;:7;:21;;;;308:30;;;;;;;;353:18;357:4;363:7;353:3;:18::i;:::-;352:19;344:28;;;;;;;;402:4;379;:11;;:20;391:7;379:20;;;;;;;;;;;;;;;;:27;;;;;;;;;;;;;;;;;;244:167;;:::o;477:170::-;571:1;552:21;;:7;:21;;;;544:30;;;;;;;;588:18;592:4;598:7;588:3;:18::i;:::-;580:27;;;;;;;;637:5;614:4;:11;;:20;626:7;614:20;;;;;;;;;;;;;;;;:28;;;;;;;;;;;;;;;;;;477:170;;:::o",
   "source": "pragma solidity ^0.4.24;\n\n// Import the library 'Roles'\nimport \"./Roles.sol\";\n\n// Define a contract 'ConsumerRole' to manage this role - add, remove, check\ncontract ConsumerRole {\n    using Roles for Roles.Role;\n\n    // Define 2 events, one for Adding, and other for Removing\n    event ConsumerAdded(address indexed account);\n    event ConsumerRemoved(address indexed account);\n\n    // Define a struct 'consumers' by inheriting from 'Roles' library, struct Role\n    Roles.Role private consumers;\n\n    // In the constructor make the address that deploys this contract the 1st consumer\n    constructor() public {\n        _addConsumer(msg.sender);\n    }\n\n    // Define a modifier that checks to see if msg.sender has the appropriate role\n    modifier onlyConsumer() {\n        require(isConsumer(msg.sender));\n        _;\n    }\n\n    // Define a function 'isConsumer' to check this role\n    function isConsumer(address account) public view returns (bool) {\n        return consumers.has(account);\n    }\n\n    // Define a function 'addConsumer' that adds this role\n    function addConsumer(address account) public onlyConsumer {\n        _addConsumer(account);\n    }\n\n    // Define a function 'renounceConsumer' to renounce this role\n    function renounceConsumer() public {\n        _removeConsumer(msg.sender);\n    }\n\n    // Define an internal function '_addConsumer' to add this role, called by 'addConsumer'\n    function _addConsumer(address account) internal {\n        consumers.add(account);\n        emit ConsumerAdded(account);\n    }\n\n    // Define an internal function '_removeConsumer' to remove this role, called by 'removeConsumer'\n    function _removeConsumer(address account) internal {\n        consumers.remove(account);\n        emit ConsumerRemoved(account);\n    }\n}\n",
-  "sourcePath": "C:\\Blockchain\\Supply-Chain-DApp\\project-6\\contracts\\coffeeaccesscontrol\\ConsumerRole.sol",
+  "sourcePath": "C:\\Blockchain\\Supply-Chain-DApp\\SupplyChain\\contracts\\coffeeaccesscontrol\\ConsumerRole.sol",
   "ast": {
     "absolutePath": "project:/contracts/coffeeaccesscontrol/ConsumerRole.sol",
     "exportedSymbols": {
@@ -285,7 +285,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1514,
+                          "referencedDeclaration": 1532,
                           "src": "632:3:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -393,7 +393,7 @@
                               "name": "msg",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 1514,
+                              "referencedDeclaration": 1532,
                               "src": "792:3:1",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_magic_message",
@@ -459,10 +459,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1517,
-                        1518
+                        1535,
+                        1536
                       ],
-                      "referencedDeclaration": 1517,
+                      "referencedDeclaration": 1535,
                       "src": "773:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -821,7 +821,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1514,
+                          "referencedDeclaration": 1532,
                           "src": "1289:3:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -1587,7 +1587,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 1514,
+                                  "referencedDeclaration": 1532,
                                   "type": "msg",
                                   "value": "msg"
                                 },
@@ -1666,10 +1666,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                1517,
-                                1518
+                                1535,
+                                1536
                               ],
-                              "referencedDeclaration": 1517,
+                              "referencedDeclaration": 1535,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -1729,7 +1729,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 1514,
+                                      "referencedDeclaration": 1532,
                                       "type": "msg",
                                       "value": "msg"
                                     },
@@ -2196,7 +2196,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 1514,
+                                  "referencedDeclaration": 1532,
                                   "type": "msg",
                                   "value": "msg"
                                 },
@@ -2678,8 +2678,7 @@
     }
   },
   "schemaVersion": "3.4.4",
-  "updatedAt": "2022-01-18T05:41:47.122Z",
-  "networkType": "ethereum",
+  "updatedAt": "2022-01-18T14:14:14.433Z",
   "devdoc": {
     "methods": {}
   },
