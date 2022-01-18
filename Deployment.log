@@ -1,0 +1,419 @@
+truffle(develop)> migrate
+
+Compiling your contracts...
+===========================
+> Compiling .\contracts\Migrations.sol
+> Compiling .\contracts\coffeeaccesscontrol\ConsumerRole.sol
+> Compiling .\contracts\coffeeaccesscontrol\DistributorRole.sol
+> Compiling .\contracts\coffeeaccesscontrol\FarmerRole.sol
+> Compiling .\contracts\coffeeaccesscontrol\RetailerRole.sol
+> Compiling .\contracts\coffeeaccesscontrol\Roles.sol
+> Compiling .\contracts\coffeebase\SupplyChain.sol
+> Compiling .\contracts\coffeecore\Ownable.sol
+> Artifacts written to C:\Blockchain\Supply-Chain-DApp\project-6\build\contracts
+> Compiled successfully using:
+   - solc: 0.4.26+commit.4563c3fc.Emscripten.clang
+
+
+
+Starting migrations...
+======================
+> Network name:    'develop'
+> Network id:      5777
+> Block gas limit: 6721975 (0x6691b7)
+
+
+1_initial_migration.js
+======================
+
+   Deploying 'Migrations'
+   ----------------------
+   > transaction hash:    0x5772192c1aacbcdd7de13ecfa6163d16ee1b357025db24d31bd3b9a26d91319b
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x16b763e1Ce6E001497B19bF3BdfdE308C741f48f
+   > block number:        1
+   > block timestamp:     1642479353
+   > account:             0x28302D6C2230a7a0399D0889d067c3e5d3833326
+   > balance:             99.999522812
+   > gas used:            238594 (0x3a402)
+   > gas price:           2 gwei
+   > value sent:          0 ETH
+   > total cost:          0.000477188 ETH
+
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:         0.000477188 ETH
+
+
+2_deploy_contracts.js
+=====================
+
+   Deploying 'FarmerRole'
+   ----------------------
+   > transaction hash:    0x657a71898918ecbc3952335c18346108c91e0493d8c9cd7f449ab63aee0e5a03
+   > Blocks: 0            Seconds: 0
+   > contract address:    0xCc8e0730498c9F0e528Ff39dFF5F7a9e478e9021
+   > block number:        3
+   > block timestamp:     1642479355
+   > account:             0x28302D6C2230a7a0399D0889d067c3e5d3833326
+   > balance:             99.998810474
+   > gas used:            313821 (0x4c9dd)
+   > gas price:           2 gwei
+   > value sent:          0 ETH
+   > total cost:          0.000627642 ETH
+
+
+   Deploying 'DistributorRole'
+   ---------------------------
+   > transaction hash:    0x06dc2f644d8454e6f14914a0b447a85c739af3bc903870b09a561f90de80a710
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x422126573f6B2d1aE05F53443B8483Eb0E59f870
+   > block number:        4
+   > block timestamp:     1642479356
+   > account:             0x28302D6C2230a7a0399D0889d067c3e5d3833326
+   > balance:             99.998182832
+   > gas used:            313821 (0x4c9dd)
+   > gas price:           2 gwei
+   > value sent:          0 ETH
+   > total cost:          0.000627642 ETH
+
+
+   Deploying 'RetailerRole'
+   ------------------------
+   > transaction hash:    0x8dbb196ded0e068e7071cb51acc9db8bc5111b3820669818b5aca47919c61aab
+   > Blocks: 0            Seconds: 0
+   > contract address:    0xED73712Dcd86f6F82aFCd07C71cAd0e47dC1AE87
+   > block number:        5
+   > block timestamp:     1642479357
+   > account:             0x28302D6C2230a7a0399D0889d067c3e5d3833326
+   > balance:             99.997555142
+   > gas used:            313845 (0x4c9f5)
+   > gas price:           2 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00062769 ETH
+
+
+   Deploying 'ConsumerRole'
+   ------------------------
+   > transaction hash:    0x98d236f8fabb181b6bbd4db772c8dc5b31df7ad782b89e7bfb3af2c82ff88738
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x1CFF817AA50faF707Dd6f1Ae9C1F8fAc863460C1
+   > block number:        6
+   > block timestamp:     1642479358
+   > account:             0x28302D6C2230a7a0399D0889d067c3e5d3833326
+   > balance:             99.996927524
+   > gas used:            313809 (0x4c9d1)
+   > gas price:           2 gwei
+   > value sent:          0 ETH
+   > total cost:          0.000627618 ETH
+
+
+   Deploying 'SupplyChain'
+   -----------------------
+   > transaction hash:    0xc3fe6f52f16f44cf3222fad145daecace2379d9dcf4402d7b9d93281f6f4be81
+   > Blocks: 0            Seconds: 0
+   > contract address:    0xa44ea85407E40B19bfCbF59a0d562ef0bC877941
+   > block number:        7
+   > block timestamp:     1642479359
+   > account:             0x28302D6C2230a7a0399D0889d067c3e5d3833326
+   > balance:             99.992250764
+   > gas used:            2338380 (0x23ae4c)
+   > gas price:           2 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00467676 ETH
+
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:         0.007187352 ETH
+
+
+Summary
+=======
+> Total deployments:   6
+> Final cost:          0.00766454 ETH
+
+
+Warning: Both truffle-config.js and truffle.js were found. Using truffle-config.js.
+Warning: Both truffle-config.js and truffle.js were found. Using truffle-config.js.
+- Fetching solc version list from solc-bin. Attempt #1
+- Fetching solc version list from solc-bin. Attempt #1
+Warning: Both truffle-config.js and truffle.js were found. Using truffle-config.js.
+Warning: Both truffle-config.js and truffle.js were found. Using truffle-config.js.
+- Blocks: 0            Seconds: 0
+- Saving migration to chain.
+- Blocks: 0            Seconds: 0
+- Blocks: 0            Seconds: 0
+- Blocks: 0            Seconds: 0
+- Blocks: 0            Seconds: 0
+- Blocks: 0            Seconds: 0
+- Saving migration to chain.
+
+truffle(develop)> truffle migrate --network rinkeby
+
+Compiling your contracts...
+===========================
+> Compiling .\contracts\Migrations.sol
+> Compiling .\contracts\coffeeaccesscontrol\ConsumerRole.sol
+> Compiling .\contracts\coffeeaccesscontrol\DistributorRole.sol
+> Compiling .\contracts\coffeeaccesscontrol\FarmerRole.sol
+> Compiling .\contracts\coffeeaccesscontrol\RetailerRole.sol
+> Compiling .\contracts\coffeeaccesscontrol\Roles.sol
+> Compiling .\contracts\coffeebase\SupplyChain.sol
+> Compiling .\contracts\coffeecore\Ownable.sol
+> Artifacts written to C:\Blockchain\Supply-Chain-DApp\project-6\build\contracts
+> Compiled successfully using:
+   - solc: 0.4.26+commit.4563c3fc.Emscripten.clang
+
+
+
+Migrations dry-run (simulation)
+===============================
+> Network name:    'rinkeby-fork'
+> Network id:      4
+> Block gas limit: 29970677 (0x1c950f5)
+
+
+1_initial_migration.js
+======================
+
+   Deploying 'Migrations'
+   ----------------------
+   > block number:        10010860
+   > block timestamp:     1642484197
+   > account:             0xCd214C2Fd33737Dd89Fdb57236d45fEA9284CEac
+   > balance:             0.17325133
+   > gas used:            223594 (0x3696a)
+   > gas price:           10 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00223594 ETH
+
+   -------------------------------------
+   > Total cost:          0.00223594 ETH
+
+
+2_deploy_contracts.js
+=====================
+
+   Deploying 'FarmerRole'
+   ----------------------
+   > block number:        10010862
+   > block timestamp:     1642484215
+   > account:             0xCd214C2Fd33737Dd89Fdb57236d45fEA9284CEac
+   > balance:             0.16998964
+   > gas used:            298821 (0x48f45)
+   > gas price:           10 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00298821 ETH
+
+
+   Deploying 'DistributorRole'
+   ---------------------------
+   > block number:        10010863
+   > block timestamp:     1642484229
+   > account:             0xCd214C2Fd33737Dd89Fdb57236d45fEA9284CEac
+   > balance:             0.16700143
+   > gas used:            298821 (0x48f45)
+   > gas price:           10 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00298821 ETH
+
+
+   Deploying 'RetailerRole'
+   ------------------------
+   > block number:        10010864
+   > block timestamp:     1642484245
+   > account:             0xCd214C2Fd33737Dd89Fdb57236d45fEA9284CEac
+   > balance:             0.16401298
+   > gas used:            298845 (0x48f5d)
+   > gas price:           10 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00298845 ETH
+
+
+   Deploying 'ConsumerRole'
+   ------------------------
+   > block number:        10010865
+   > block timestamp:     1642484260
+   > account:             0xCd214C2Fd33737Dd89Fdb57236d45fEA9284CEac
+   > balance:             0.16102489
+   > gas used:            298809 (0x48f39)
+   > gas price:           10 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00298809 ETH
+
+
+   Deploying 'SupplyChain'
+   -----------------------
+   > block number:        10010866
+   > block timestamp:     1642484305
+   > account:             0xCd214C2Fd33737Dd89Fdb57236d45fEA9284CEac
+   > balance:             0.13869109
+   > gas used:            2233380 (0x221424)
+   > gas price:           10 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0223338 ETH
+
+   -------------------------------------
+   > Total cost:          0.03428676 ETH
+
+
+Summary
+=======
+> Total deployments:   6
+> Final cost:          0.0365227 ETH
+
+
+
+
+
+Starting migrations...
+======================
+> Network name:    'rinkeby'
+> Network id:      4
+> Block gas limit: 30000000 (0x1c9c380)
+
+
+1_initial_migration.js
+======================
+
+   Deploying 'Migrations'
+   ----------------------
+   > transaction hash:    0x9cf7c13fc6f908dcc574d4620245dfde12d5ed94b495d3f2195b755df6f81120
+   > Blocks: 2            Seconds: 17
+   > contract address:    0x4718eE885B11368A65F300fB0395193270B3a083
+   > block number:        10010870
+   > block timestamp:     1642484354
+   > account:             0xCd214C2Fd33737Dd89Fdb57236d45fEA9284CEac
+   > balance:             0.17308833
+   > gas used:            239894 (0x3a916)
+   > gas price:           10 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00239894 ETH
+
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:          0.00239894 ETH
+
+
+2_deploy_contracts.js
+=====================
+
+   Deploying 'FarmerRole'
+   ----------------------
+   > transaction hash:    0xd3ad6abd1ebd122485a1304c0dd4df4db988d7833798957a7b0dbffec171b0a0
+   > Blocks: 1            Seconds: 9
+   > contract address:    0x0b65d666432dda3094BB581469BfF8c9229c74DC
+   > block number:        10010872
+   > block timestamp:     1642484384
+   > account:             0xCd214C2Fd33737Dd89Fdb57236d45fEA9284CEac
+   > balance:             0.16948664
+   > gas used:            314421 (0x4cc35)
+   > gas price:           10 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00314421 ETH
+
+
+   Deploying 'DistributorRole'
+   ---------------------------
+   > transaction hash:    0xa9bf681a61b0b618bf80e568a86f215246dc7167f39eb2233f0d847fd4f90a26
+   > Blocks: 2            Seconds: 21
+   > contract address:    0xe871E5D331314C0A3a176EfF0AFd6D59c7eb1839
+   > block number:        10010874
+   > block timestamp:     1642484414
+   > account:             0xCd214C2Fd33737Dd89Fdb57236d45fEA9284CEac
+   > balance:             0.16634243
+   > gas used:            314421 (0x4cc35)
+   > gas price:           10 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00314421 ETH
+
+
+   Deploying 'RetailerRole'
+   ------------------------
+   > transaction hash:    0x5e2131c2922cb471ea441fd7497a98ddafd7757a791e5222f26f2474e0ed709e
+   > Blocks: 1            Seconds: 9
+   > contract address:    0x0e2312A5E00E8E28CEd2b2C1d5Ce7f469b575f8C
+   > block number:        10010875
+   > block timestamp:     1642484429
+   > account:             0xCd214C2Fd33737Dd89Fdb57236d45fEA9284CEac
+   > balance:             0.16319798
+   > gas used:            314445 (0x4cc4d)
+   > gas price:           10 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00314445 ETH
+
+
+   Deploying 'ConsumerRole'
+   ------------------------
+   > transaction hash:    0x136e2a6609a802baa0674bdbbdd5df863751982350be14f56fcb89ba92bf75d7
+   > Blocks: 2            Seconds: 21
+   > contract address:    0xC9ef9ebAF480086e900C199b7aed72d6bDAA5390
+   > block number:        10010877
+   > block timestamp:     1642484459
+   > account:             0xCd214C2Fd33737Dd89Fdb57236d45fEA9284CEac
+   > balance:             0.16005389
+   > gas used:            314409 (0x4cc29)
+   > gas price:           10 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00314409 ETH
+
+
+   Deploying 'SupplyChain'
+   -----------------------
+   > transaction hash:    0x34a4b36a3e59574c3355a55a554a34be785963829108026e8f8adf7b551bdf7f
+   > Blocks: 2            Seconds: 21
+   > contract address:    0x1DCbe6474C5E347fF289f1418F18Be45B4F11d53
+   > block number:        10010879
+   > block timestamp:     1642484489
+   > account:             0xCd214C2Fd33737Dd89Fdb57236d45fEA9284CEac
+   > balance:             0.13659809
+   > gas used:            2345580 (0x23ca6c)
+   > gas price:           10 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0234558 ETH
+
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:          0.03603276 ETH
+
+
+Summary
+=======
+> Total deployments:   6
+> Final cost:          0.0384317 ETH
+
+
+
+Warning: Both truffle-config.js and truffle.js were found. Using truffle-config.js.
+Warning: Both truffle-config.js and truffle.js were found. Using truffle-config.js.
+- Fetching solc version list from solc-bin. Attempt #1
+- Fetching solc version list from solc-bin. Attempt #1
+Warning: Both truffle-config.js and truffle.js were found. Using truffle-config.js.
+Warning: Both truffle-config.js and truffle.js were found. Using truffle-config.js.
+(node:788) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 11 data listeners added to [Provider]. Use emitter.setMaxListeners() to increase limit
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:788) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 11 connect listeners added to [Provider]. Use emitter.setMaxListeners() to increase limit
+(node:788) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 11 error listeners added to [Provider]. Use emitter.setMaxListeners() to increase limit
+(node:788) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 11 close listeners added to [Provider]. Use emitter.setMaxListeners() to increase limit
+(node:788) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 11 disconnect listeners added to [Provider]. Use emitter.setMaxListeners() to increase limit
+Warning: Both truffle-config.js and truffle.js were found. Using truffle-config.js.
+Warning: Both truffle-config.js and truffle.js were found. Using truffle-config.js.
+Warning: Both truffle-config.js and truffle.js were found. Using truffle-config.js.
+- Blocks: 0            Seconds: 0
+- Saving migration to chain.
+- Blocks: 0            Seconds: 0
+- Blocks: 0            Seconds: 0
+- Blocks: 0            Seconds: 0
+- Blocks: 0            Seconds: 0
+- Blocks: 0            Seconds: 0
+- Saving migration to chain.
+
+truffle(develop)>
